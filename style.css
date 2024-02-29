@@ -1,0 +1,55 @@
+html {
+    cursor: none; /* Menyembunyikan cursor standar */
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    user-select: none;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden; 
+  }
+  
+  h1:hover {
+    background: linear-gradient(90deg, #e04810, #e74c3c);
+    -webkit-background-clip: text;
+    color: transparent; 
+    animation: colorChange 1s steps(14) ease-in-out alternate-reverse;
+  }
+  
+  @keyframes colorChange {
+    from {
+      background-position: 100%; 
+    }
+    to {
+      background-position: 0%;
+    }
+  }
+  @keyframes forCursor {
+    100% {
+        border-radius: 0px;
+        transform: translate(-50%,-50%) rotate(1440deg) scale(2);
+        background: orange;
+        box-shadow: 0px 0px 4px rgba(77, 69, 48, 0.6);
+    }
+  }
+  
+  .custom-cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #3498db;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 999999999 !important;
+    animation: forCursor 5s ease-in-out infinite alternate-reverse;
+  }
+  
